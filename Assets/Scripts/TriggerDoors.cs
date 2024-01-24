@@ -17,4 +17,5 @@ public class TriggerDoors : MonoBehaviour
             RightDoorReference.GetComponent<Animator>().SetTrigger("Open");
         }
     }
+    
 }
