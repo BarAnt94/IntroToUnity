@@ -3,7 +3,11 @@ guid: 0fbd79ccaebf0ea49a3d4e6b1d530c08
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ChessTileVisualWhite: {fileID: 8392005947944701070, guid: d71979689832b484c84e502f91e62f78,
+      type: 3}
+  - ChessTileVisualBlack: {fileID: 8392005947944701070, guid: 00e8d4b6df8bbcc47a8f42c0a1c241b9,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

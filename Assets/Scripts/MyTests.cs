@@ -14,6 +14,7 @@ public class MyTests : MonoBehaviour
     void Start()
     {
         BuildChessBoard();
+        SelectBorders();
     }
 
     // une fonction qui va creer le plateau de jeu en creant le prefab case par case grace a un Instantiate
@@ -77,20 +78,31 @@ public class MyTests : MonoBehaviour
     // avec boucle for
     private void SelectAllTiles()
     {
-        // TODO
+        for (int i=0 ;i<_tiles.Count;i++)
+        {
+            SelectOneTile(i);
+        }
     }
 
     // avec boucle foreach
     private void SelectAllTiles2()
     {
-        // TODO
+        foreach (var item in _tiles)
+        {
+            item.GetComponent<Renderer>().material.color = Color.yellow;
+        }
     }
 
     // avec boucle for
     private void UnselectAllTiles()
     {
-        // TODO
+        for (int i=0 ;i<_tiles.Count;i++)
+        {
+         UnselectOneTile(i);
+        }
+        
     }
+    
 
     private void SelectAllBlack()
     {
@@ -104,8 +116,8 @@ public class MyTests : MonoBehaviour
 
     private void SelectRandomTile()
     {
-        int randomIndex = Random.Range(0, _tiles.Count); // renvoi un nombre aléatoire en 0 et _tiles.Count
-        // TODO
+        int randomIndex = Random.Range(0, _tiles.Count); // renvoi un nombre alï¿½atoire en 0 et _tiles.Count
+        
     }
 
     private void SelectCol(int pColIndex)
@@ -121,19 +133,37 @@ public class MyTests : MonoBehaviour
     // selectionne le contour
     private void SelectBorders()
     {
-        // TODO
+        for (int i = 0;i<8;i++)
+        {
+            SelectOneTile(i);
+        }
+        for (int i = 8;i<56;i+=8)
+        {
+            SelectOneTile(i);
+        }
+        for (int i = 56;i<64;i++)
+        {
+            SelectOneTile(i);
+        }
     }
 
     // selectionne la diagonale de gauche a droite
     private void SelectDiagonal()
     {
-        // TODO
+        for (int i = 0; i<_boardSize;i++)
+        {
+            SelectOneTile((_boardSize+1)*i);
+        }
     }
 
     // selectionne les 2 diagonales
     private void SelectX()
     {
-        // TODO
+        for (int i = 0; i<_boardSize;i++)
+        {
+            SelectOneTile((_boardSize+1)*i);
+            SelectOneTile((_boardSize-1)*i);
+        }
     }
 
     // Select AOE en croix
